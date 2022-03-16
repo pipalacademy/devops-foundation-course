@@ -17,6 +17,8 @@ nav:
     - managing-servers.md
   - Docker:
     - docker/introduction.md
+    - docker/cheatsheet.md
+    - docker/diving-in.md
 
 markdown_extensions:
   - admonition
