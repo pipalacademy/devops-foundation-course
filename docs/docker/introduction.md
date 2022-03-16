@@ -85,7 +85,7 @@ Let's try running it:
 
 ```
 $ docker run figlet
-    _          _ _             _            _
+ _          _ _             _            _
 | |__   ___| | | ___     __| | ___   ___| | _____ _ __
 | '_ \ / _ \ | |/ _ \   / _` |/ _ \ / __| |/ / _ \ '__|
 | | | |  __/ | | (_) | | (_| | (_) | (__|   <  __/ |
@@ -125,7 +125,7 @@ Compare it with how we ran it with the version 1.1 of the image.
 ```
 $ docker run cowsay docker is awesome
     ___________________
-< docker is awesome >
+   < docker is awesome >
     -------------------
         \   ^__^
          \  (oo)\_______
@@ -142,13 +142,13 @@ Hint: `cowsay` will be installed in `/usr/games/` and you may have to give full 
 Let's combine both `figlet` and `cowsay` as a single application.
 
 ```
-	$ mkdir figsay
-	# create figsay.sh file with the following contents
-	$ cat figsay.sh
-	#! /bin/bash
-	figlet $* | /usr/games/cowsay -n
+    $ mkdir figsay
+    # create figsay.sh file with the following contents
+    $ cat figsay.sh
+    #! /bin/bash
+    figlet $* | /usr/games/cowsay -n
 
-	$ chmod +x figsay.sh
+    $ chmod +x figsay.sh
 ```
 
 Now we can create a `Dockerfile`:
