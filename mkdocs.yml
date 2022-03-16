@@ -19,6 +19,7 @@ nav:
     - docker/introduction.md
     - docker/cheatsheet.md
     - docker/diving-in.md
+    - docker/docker-compose.md
 
 markdown_extensions:
   - admonition
