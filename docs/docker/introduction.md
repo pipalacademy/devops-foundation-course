@@ -128,7 +128,7 @@ $ docker run cowsay docker is awesome
 < docker is awesome >
     -------------------
         \   ^__^
-            \  (oo)\_______
+         \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
