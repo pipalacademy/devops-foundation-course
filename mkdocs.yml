@@ -15,3 +15,10 @@ nav:
     - lab-setup.md
   - Managing Servers:
     - managing-servers.md
+  - Docker:
+    - docker/introduction.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
