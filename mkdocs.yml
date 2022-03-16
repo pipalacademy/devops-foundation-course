@@ -5,9 +5,13 @@ copyright: Copyright © 2022, Pipal Academy
 
 theme:
   name: material
+  features:
+    - navigation.tabs
 
 nav:
-  - index.md
-  - outline.md
-  - lab-setup.md
-  - managing-servers.md
+  - Introduction:
+    - index.md
+    - outline.md
+    - lab-setup.md
+  - Managing Servers:
+    - managing-servers.md
