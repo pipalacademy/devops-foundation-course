@@ -25,6 +25,12 @@ nav:
     - docker/diving-in.md
     - docker/docker-compose.md
     - docker/best-practices.md
+  - Kubernetes:
+    - kubernetes/introduction.md
+    - kubernetes/pods.md
+    - kubernetes/deployments.md
+    - kubernetes/services.md
+    - kubernetes/ingress.md
 
 markdown_extensions:
   - admonition
