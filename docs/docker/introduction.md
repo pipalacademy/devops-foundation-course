@@ -92,6 +92,97 @@ $ docker run figlet
 |_| |_|\___|_|_|\___/   \__,_|\___/ \___|_|\_\___|_|
 ```
 
+### Example figsay
+
+Let's combine figlet and cowsay commands and package it as a docker image.
+
+We can pass the output of figlet to cowsay using pipe.
+
+```
+$ figlet hello | cowsay -n
+ ________________________
+/  _          _ _        \
+| | |__   ___| | | ___   |
+| | '_ \ / _ \ | |/ _ \  |
+| | | | |  __/ | | (_) | |
+| |_| |_|\___|_|_|\___/  |
+\                        /
+ ------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+```
+
+We can write a shell script to do this. Let's call it figsay.sh.
+
+```
+$ cat figsay.sh
+#! /bin/bash
+figlet $* | /usr/games/cowsay -n
+
+$ chmod +x figsay.sh
+```
+
+We run chmod to give execute permission to the figsay.sh file.
+
+Now we can run it using:
+
+```
+$ ./figsay.sh hello
+ ________________________
+/  _          _ _        \
+| | |__   ___| | | ___   |
+| | '_ \ / _ \ | |/ _ \  |
+| | | | |  __/ | | (_) | |
+| |_| |_|\___|_|_|\___/  |
+\                        /
+ ------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+```
+
+Let's package it as a docker image.
+
+```
+$ cat Dockerfile
+FROM ubuntu
+RUN apt-get update
+RUN apt-get install -y figlet cowsay
+ADD figsay.sh /
+CMD ["/figsay.sh", "hello"]
+```
+
+Let's build the docker image.
+
+```
+$ docker build . -t figsay
+...
+```
+
+And run it:
+
+```
+$ docker run figsay
+ ________________________
+/  _          _ _        \
+| | |__   ___| | | ___   |
+| | '_ \ / _ \ | |/ _ \  |
+| | | | |  __/ | | (_) | |
+| |_| |_|\___|_|_|\___/  |
+\                        /
+ ------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+```
+
 ### `CMD` vs. `ENTRYPOINT`
 
 The `CMD` directive is used to specify the default command to run and this is used when no arguments is specified after docker run image-name.

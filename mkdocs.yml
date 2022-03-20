@@ -17,9 +17,14 @@ nav:
     - managing-servers.md
   - Docker:
     - docker/introduction.md
+    - docker/registry.md
+    - docker/environment.md
+    - docker/ports.md
+    - docker/volumes.md
     - docker/cheatsheet.md
     - docker/diving-in.md
     - docker/docker-compose.md
+    - docker/best-practices.md
 
 markdown_extensions:
   - admonition
