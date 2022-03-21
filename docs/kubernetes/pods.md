@@ -20,7 +20,7 @@ The respose is empty as we are not running any pods yet.
 We can create a pod in the kubernetes cluster by specifying it an YAML file and applying the file.
 
 ```
-$ cat pod.yml
+$ cat pod.yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -111,7 +111,7 @@ It shows a lot of information about the pod. One of the intersting things that y
 We can temporarily access the port of the container running the pod by using port-forward.
 
 ```
-$ kubectl port-forward figlet-web-5c857bf5c6-7rbcm --address 0.0.0.0 9090:8080
+$ kubectl port-forward figlet-web --address 0.0.0.0 9090:8080
 Forwarding from 0.0.0.0:9090 -> 8080
 ```
 
