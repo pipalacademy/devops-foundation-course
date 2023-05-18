@@ -1,12 +1,12 @@
-site_name: DevOps Foundation Course for ZeOmega
+site_name: DevOps Foundation Course
 
 site_author: Anand Chitpothu
 copyright: Copyright © 2022, Pipal Academy
 
 theme:
   name: material
-  features:
-    - navigation.tabs
+#  features:
+#    - navigation.tabs
 
 nav:
   - Introduction:
@@ -31,6 +31,12 @@ nav:
     - kubernetes/deployments.md
     - kubernetes/services.md
     - kubernetes/ingress.md
+    - kubernetes/environment.md
+    - kubernetes/volumes.md
+    - kubernetes/resources.md
+  - Exercises:
+    - exercises/metabase.md
+    - exercises/ci-cd.md
 
 markdown_extensions:
   - admonition

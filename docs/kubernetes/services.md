@@ -51,7 +51,7 @@ As you can see the service is defined by specifying a selector using labels.
 Let's create the depoloyment and service.
 
 ```
-$ kubectl apply -f deployment.yml
+$ kubectl apply -f deployment.yaml
 deployment.apps/figlet-web configured
 $ kubectl apply -f service.yaml
 service/figlet-web created
@@ -76,7 +76,7 @@ NAME                         READY   STATUS    RESTARTS   AGE
 figlet-web-f8b5cc5cd-l24rv   1/1     Running   0          3m11s
 figlet-web-f8b5cc5cd-sp65l   1/1     Running   0          3m13s
 
-$ kubectl exec figlet-web-f8b5cc5cd-l24rv -- bash
+$ kubectl exec -it figlet-web-f8b5cc5cd-l24rv -- bash
 root@figlet-web-f8b5cc5cd-l24rv:/app# curl http://figlet-web/
 <!DOCTYPE html>
 <html lang="en">
@@ -190,3 +190,7 @@ figlet-web   LoadBalancer   10.245.223.123   64.225.85.151   80:30284/TCP   39m
 ```
 
 A load balancer is an expensive resource and it may not be good idea to create a load balancer for every application. The common way to address that is by using an ingress controller. We'll learn about it in the next lesson.
+
+## Exercise: Deploy graphviz-web
+
+Deploy graphviz-web and graphviz-api as NodePort services.
